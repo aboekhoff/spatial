@@ -18,7 +18,7 @@ gulp.task('connect', function() {
 
 gulp.task('build', function() {
     browserify({
-    entries: 'src/Game.js',
+    entries: 'src/Main.js',
     debug: true
     })
     .transform(babelify)
@@ -32,7 +32,7 @@ gulp.task('build', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('src/*.js', ['build']);
+    gulp.watch('src/**/*.js', ['build']);
     watch('./public/js')
     .pipe(connect.reload());
 });
